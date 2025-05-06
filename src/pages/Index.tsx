@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Navigation from '@/components/Navigation';
 import FeaturedSection from '@/components/FeaturedSection';
@@ -10,16 +10,23 @@ import MostViewedSection from '@/components/MostViewedSection';
 import AnnouncementSection from '@/components/AnnouncementSection';
 
 const Index = () => {
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  
+  // Handler for category changes from navigation
+  const handleCategoryChange = (category: string | null) => {
+    setActiveCategory(category);
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-buzzara-background">
       <Header />
-      <Navigation />
+      <Navigation onCategoryChange={handleCategoryChange} activeCategory={activeCategory} />
       <main className="flex-1">
-        <FeaturedSection />
-        <AnnouncementSection />
-        <PopularSection />
-        <MostViewedSection />
-        <AdGrid />
+        <FeaturedSection activeCategory={activeCategory} />
+        <AnnouncementSection activeCategory={activeCategory} />
+        <PopularSection activeCategory={activeCategory} />
+        <MostViewedSection activeCategory={activeCategory} />
+        <AdGrid activeCategory={activeCategory} />
       </main>
       <Footer />
     </div>

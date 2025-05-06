@@ -1,7 +1,6 @@
 
 import React from 'react';
 import AdCard from './AdCard';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import {
   Carousel,
   CarouselContent,
@@ -9,6 +8,10 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+
+interface FeaturedSectionProps {
+  activeCategory: string | null;
+}
 
 const ads = [
   {
@@ -25,7 +28,8 @@ const ads = [
     tag: {
       text: 'HOT',
       type: 'hot' as const
-    }
+    },
+    category: 'Mulheres'
   },
   {
     id: '2',
@@ -40,7 +44,8 @@ const ads = [
     tag: {
       text: 'NEW',
       type: 'new' as const
-    }
+    },
+    category: 'Homens'
   },
   {
     id: '3',
@@ -56,7 +61,8 @@ const ads = [
     tag: {
       text: 'SALE',
       type: 'sale' as const
-    }
+    },
+    category: 'Mulheres'
   },
   {
     id: '4',
@@ -67,11 +73,34 @@ const ads = [
     views: 950,
     price: { 
       current: 320
-    }
+    },
+    category: 'Trans'
+  },
+  {
+    id: '9',
+    name: 'Ricardo e Julia',
+    image: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901',
+    rating: 4.8,
+    reviews: 27,
+    views: 1120,
+    price: { 
+      current: 550
+    },
+    category: 'Casais'
   }
 ];
 
-const FeaturedSection = () => {
+const FeaturedSection: React.FC<FeaturedSectionProps> = ({ activeCategory }) => {
+  // Filter ads based on active category
+  const filteredAds = activeCategory 
+    ? ads.filter(ad => ad.category === activeCategory)
+    : ads;
+    
+  // If no ads match the filter, return null or empty component
+  if (filteredAds.length === 0) {
+    return null;
+  }
+
   return (
     <section className="py-8 px-4 md:px-8 relative">
       <div className="container mx-auto">
@@ -86,7 +115,7 @@ const FeaturedSection = () => {
             className="w-full"
           >
             <CarouselContent>
-              {ads.map((ad) => (
+              {filteredAds.map((ad) => (
                 <CarouselItem key={ad.id} className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
                   <div className="p-1">
                     <AdCard {...ad} />

@@ -9,6 +9,10 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
+interface PopularSectionProps {
+  activeCategory: string | null;
+}
+
 // Sample data for popular ads
 const popularAds = [
   {
@@ -20,6 +24,7 @@ const popularAds = [
     views: 1870,
     price: { current: 400 },
     tag: { text: 'HOT', type: 'hot' as const },
+    category: 'Mulheres'
   },
   {
     id: '5',
@@ -29,6 +34,7 @@ const popularAds = [
     reviews: 22,
     views: 780,
     price: { current: 290, original: 340 },
+    category: 'Homens'
   },
   {
     id: '3',
@@ -38,7 +44,8 @@ const popularAds = [
     reviews: 56,
     views: 1580,
     price: { current: 280, original: 350 },
-    tag: { text: 'SALE', type: 'sale' as const }
+    tag: { text: 'SALE', type: 'sale' as const },
+    category: 'Mulheres'
   },
   {
     id: '8',
@@ -48,11 +55,33 @@ const popularAds = [
     reviews: 31,
     views: 1450,
     price: { current: 310, original: 380 },
-    tag: { text: 'SALE', type: 'sale' as const }
+    tag: { text: 'SALE', type: 'sale' as const },
+    category: 'Trans'
+  },
+  {
+    id: '10',
+    name: 'Miguel e Laura',
+    image: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901',
+    rating: 4.7,
+    reviews: 29,
+    views: 980,
+    price: { current: 500, original: 600 },
+    tag: { text: 'HOT', type: 'hot' as const },
+    category: 'Casais'
   }
 ];
 
-const PopularSection = () => {
+const PopularSection: React.FC<PopularSectionProps> = ({ activeCategory }) => {
+  // Filter ads based on active category
+  const filteredAds = activeCategory 
+    ? popularAds.filter(ad => ad.category === activeCategory)
+    : popularAds;
+  
+  // If no ads match the filter, return null or empty component
+  if (filteredAds.length === 0) {
+    return null;
+  }
+
   return (
     <section className="py-8 px-4 md:px-8 relative">
       <div className="container mx-auto">
@@ -67,7 +96,7 @@ const PopularSection = () => {
             className="w-full"
           >
             <CarouselContent>
-              {popularAds.map((ad) => (
+              {filteredAds.map((ad) => (
                 <CarouselItem key={ad.id} className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
                   <div className="p-1">
                     <AdCard {...ad} />

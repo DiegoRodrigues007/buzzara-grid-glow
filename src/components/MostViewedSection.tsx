@@ -9,6 +9,10 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
+interface MostViewedSectionProps {
+  activeCategory: string | null;
+}
+
 // Sample data for most viewed ads
 const mostViewedAds = [
   {
@@ -20,6 +24,7 @@ const mostViewedAds = [
     views: 1870,
     price: { current: 400 },
     tag: { text: 'HOT', type: 'hot' as const },
+    category: 'Mulheres'
   },
   {
     id: '3',
@@ -29,7 +34,8 @@ const mostViewedAds = [
     reviews: 56,
     views: 1580,
     price: { current: 280, original: 350 },
-    tag: { text: 'SALE', type: 'sale' as const }
+    tag: { text: 'SALE', type: 'sale' as const },
+    category: 'Mulheres'
   },
   {
     id: '8',
@@ -39,7 +45,8 @@ const mostViewedAds = [
     reviews: 31,
     views: 1450,
     price: { current: 310, original: 380 },
-    tag: { text: 'SALE', type: 'sale' as const }
+    tag: { text: 'SALE', type: 'sale' as const },
+    category: 'Trans'
   },
   {
     id: '1',
@@ -49,11 +56,43 @@ const mostViewedAds = [
     reviews: 42,
     views: 1205,
     price: { current: 350, original: 450 },
-    tag: { text: 'HOT', type: 'hot' as const }
+    tag: { text: 'HOT', type: 'hot' as const },
+    category: 'Mulheres'
+  },
+  {
+    id: '11',
+    name: 'Pedro Silva',
+    image: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901',
+    rating: 4.7,
+    reviews: 35,
+    views: 1150,
+    price: { current: 320 },
+    category: 'Homens'
+  },
+  {
+    id: '12',
+    name: 'Juliana e Marcos',
+    image: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901',
+    rating: 4.8,
+    reviews: 38,
+    views: 1190,
+    price: { current: 540, original: 650 },
+    tag: { text: 'HOT', type: 'hot' as const },
+    category: 'Casais'
   }
 ];
 
-const MostViewedSection = () => {
+const MostViewedSection: React.FC<MostViewedSectionProps> = ({ activeCategory }) => {
+  // Filter ads based on active category
+  const filteredAds = activeCategory 
+    ? mostViewedAds.filter(ad => ad.category === activeCategory)
+    : mostViewedAds;
+  
+  // If no ads match the filter, return null or empty component
+  if (filteredAds.length === 0) {
+    return null;
+  }
+
   return (
     <section className="py-8 px-4 md:px-8 relative">
       <div className="container mx-auto">
@@ -68,7 +107,7 @@ const MostViewedSection = () => {
             className="w-full"
           >
             <CarouselContent>
-              {mostViewedAds.map((ad) => (
+              {filteredAds.map((ad) => (
                 <CarouselItem key={ad.id} className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
                   <div className="p-1">
                     <AdCard {...ad} />

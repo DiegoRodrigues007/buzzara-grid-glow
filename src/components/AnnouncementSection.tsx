@@ -5,6 +5,10 @@ import { Badge } from '@/components/ui/badge';
 import { Star, Eye, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+interface AnnouncementSectionProps {
+  activeCategory: string | null;
+}
+
 // Types for announcements
 interface Announcement {
   id: string;
@@ -80,6 +84,20 @@ const announcements: Announcement[] = [
     rating: 5.0,
     reviews: 22,
     views: 890,
+  },
+  {
+    id: '105',
+    title: 'Casal Experiente',
+    description: 'Casal oferece momentos inesquecíveis para casais e solteiros.',
+    image: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901',
+    price: 600,
+    location: 'São Paulo, Pinheiros',
+    category: 'Casais',
+    postedDate: '2023-05-05',
+    rating: 4.9,
+    reviews: 18,
+    views: 760,
+    tag: { text: 'NEW', type: 'new' }
   }
 ];
 
@@ -146,14 +164,24 @@ const AnnouncementCard: React.FC<{ announcement: Announcement }> = ({ announceme
   );
 };
 
-const AnnouncementSection = () => {
+const AnnouncementSection: React.FC<AnnouncementSectionProps> = ({ activeCategory }) => {
+  // Filter announcements based on active category
+  const filteredAnnouncements = activeCategory 
+    ? announcements.filter(announcement => announcement.category === activeCategory)
+    : announcements;
+
+  // If no announcements match the filter, return null or empty component
+  if (filteredAnnouncements.length === 0) {
+    return null;
+  }
+
   return (
     <section className="py-8 px-4 md:px-8">
       <div className="container mx-auto">
         <h2 className="featured-section-title text-white">Anúncios Recentes</h2>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-8">
-          {announcements.map(announcement => (
+          {filteredAnnouncements.map(announcement => (
             <AnnouncementCard key={announcement.id} announcement={announcement} />
           ))}
         </div>

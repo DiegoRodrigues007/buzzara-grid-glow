@@ -1,6 +1,10 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AdCard from './AdCard';
+
+interface AdGridProps {
+  activeCategory: string | null;
+}
 
 // Sample data - in a real app this would come from an API
 const allAds = [
@@ -88,15 +92,31 @@ const allAds = [
     price: { current: 310, original: 380 },
     tag: { text: 'SALE', type: 'sale' as const },
     category: 'Trans'
+  },
+  {
+    id: '13',
+    name: 'Rafael e Amanda',
+    image: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901',
+    rating: 4.6,
+    reviews: 25,
+    views: 950,
+    price: { current: 570 },
+    tag: { text: 'NEW', type: 'new' as const },
+    category: 'Casais'
   }
 ];
 
-const AdGrid = () => {
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+const AdGrid: React.FC<AdGridProps> = ({ activeCategory }) => {
+  const [localCategory, setLocalCategory] = useState<string | null>(null);
+  
+  // Sync the local state with the prop from parent
+  useEffect(() => {
+    setLocalCategory(activeCategory);
+  }, [activeCategory]);
   
   // Filter ads based on active category
-  const filteredAds = activeCategory 
-    ? allAds.filter(ad => ad.category === activeCategory)
+  const filteredAds = localCategory 
+    ? allAds.filter(ad => ad.category === localCategory)
     : allAds;
     
   // Categories for filtering
@@ -107,9 +127,9 @@ const AdGrid = () => {
       <div className="container mx-auto">
         <div className="mb-6 flex flex-wrap gap-2">
           <button
-            onClick={() => setActiveCategory(null)}
+            onClick={() => setLocalCategory(null)}
             className={`px-4 py-1 rounded-full text-sm font-medium transition-colors
-                      ${!activeCategory ? 'bg-buzzara-primary text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600'}`}
+                      ${!localCategory ? 'bg-buzzara-primary text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600'}`}
           >
             Todos
           </button>
@@ -117,9 +137,9 @@ const AdGrid = () => {
           {categories.map(category => (
             <button
               key={category}
-              onClick={() => setActiveCategory(category)}
+              onClick={() => setLocalCategory(category)}
               className={`px-4 py-1 rounded-full text-sm font-medium transition-colors
-                        ${activeCategory === category ? 'bg-buzzara-primary text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600'}`}
+                        ${localCategory === category ? 'bg-buzzara-primary text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600'}`}
             >
               {category}
             </button>

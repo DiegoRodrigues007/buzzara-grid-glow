@@ -1,16 +1,19 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { cn } from '@/lib/utils';
 
-const Navigation = () => {
-  const [activeCategory, setActiveCategory] = useState('Mulheres');
-  
+interface NavigationProps {
+  activeCategory: string | null;
+  onCategoryChange: (category: string | null) => void;
+}
+
+const Navigation: React.FC<NavigationProps> = ({ activeCategory, onCategoryChange }) => {
   const categories = [
     { id: 'anuncie', name: 'Anuncie agora', highlight: true },
-    { id: 'mulheres', name: 'Mulheres' },
-    { id: 'homens', name: 'Homens' },
-    { id: 'trans', name: 'Trans' },
-    { id: 'casais', name: 'Casais' }
+    { id: 'mulheres', name: 'Mulheres', filter: 'Mulheres' },
+    { id: 'homens', name: 'Homens', filter: 'Homens' },
+    { id: 'trans', name: 'Trans', filter: 'Trans' },
+    { id: 'casais', name: 'Casais', filter: 'Casais' }
   ];
 
   return (
@@ -24,13 +27,15 @@ const Navigation = () => {
               "whitespace-nowrap px-4 py-1 mx-1 rounded-md font-medium text-sm transition-colors duration-200",
               category.highlight 
                 ? "bg-buzzara-accent text-white hover:bg-red-600" 
-                : activeCategory === category.name
+                : activeCategory === category.filter
                   ? "bg-gray-700 text-white"
                   : "text-gray-300 hover:text-white hover:bg-gray-700"
             )}
             onClick={(e) => {
               e.preventDefault();
-              setActiveCategory(category.name);
+              if (category.filter) {
+                onCategoryChange(activeCategory === category.filter ? null : category.filter);
+              }
             }}
           >
             {category.name}
