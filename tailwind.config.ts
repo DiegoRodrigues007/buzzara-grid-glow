@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,24 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				buzzara: {
+					background: '#2E2E2E',
+					primary: '#9b87f5',
+					secondary: '#FFC107',
+					accent: '#EA384C',
+					neutral: '#403E43',
+					'neutral-light': '#8A898C',
+					card: '#333333',
+					tag: {
+						new: '#59CBE8',
+						hot: '#EA384C',
+						sale: '#7ED957'
+					}
 				}
+			},
+			fontFamily: {
+				sans: ["Montserrat", "sans-serif"],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +102,20 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'card-hover': {
+					'0%, 100%': { 
+						boxShadow: '0 0 0 rgba(155, 135, 245, 0)' 
+					},
+					'50%': { 
+						boxShadow: '0 0 15px rgba(155, 135, 245, 0.4)' 
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'card-pulse': 'card-hover 2s ease-in-out infinite'
 			}
 		}
 	},
