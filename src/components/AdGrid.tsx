@@ -10,6 +10,7 @@ const allAds = [
     image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9',
     rating: 4.8,
     reviews: 42,
+    views: 1205,
     price: { current: 350, original: 450 },
     tag: { text: 'HOT', type: 'hot' as const },
     category: 'Mulheres'
@@ -20,6 +21,7 @@ const allAds = [
     image: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901',
     rating: 4.5,
     reviews: 28,
+    views: 890,
     price: { current: 300 },
     tag: { text: 'NEW', type: 'new' as const },
     category: 'Homens'
@@ -30,6 +32,7 @@ const allAds = [
     image: 'https://images.unsplash.com/photo-1535268647677-300dbf3d78d1',
     rating: 4.9,
     reviews: 56,
+    views: 1580,
     price: { current: 280, original: 350 },
     tag: { text: 'SALE', type: 'sale' as const },
     category: 'Mulheres'
@@ -40,6 +43,7 @@ const allAds = [
     image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9',
     rating: 4.7,
     reviews: 34,
+    views: 950,
     price: { current: 320 },
     category: 'Mulheres'
   },
@@ -49,6 +53,7 @@ const allAds = [
     image: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901',
     rating: 4.6,
     reviews: 22,
+    views: 780,
     price: { current: 290, original: 340 },
     category: 'Homens'
   },
@@ -58,6 +63,7 @@ const allAds = [
     image: 'https://images.unsplash.com/photo-1535268647677-300dbf3d78d1',
     rating: 5.0,
     reviews: 48,
+    views: 1870,
     price: { current: 400 },
     tag: { text: 'HOT', type: 'hot' as const },
     category: 'Mulheres'
@@ -68,6 +74,7 @@ const allAds = [
     image: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901',
     rating: 4.3,
     reviews: 19,
+    views: 620,
     price: { current: 260 },
     category: 'Homens'
   },
@@ -77,6 +84,7 @@ const allAds = [
     image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9',
     rating: 4.5,
     reviews: 31,
+    views: 1450,
     price: { current: 310, original: 380 },
     tag: { text: 'SALE', type: 'sale' as const },
     category: 'Trans'

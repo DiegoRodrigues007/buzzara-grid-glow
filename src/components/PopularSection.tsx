@@ -1,7 +1,6 @@
 
 import React from 'react';
 import AdCard from './AdCard';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import {
   Carousel,
   CarouselContent,
@@ -10,37 +9,26 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-const ads = [
+// Sample data for popular ads
+const popularAds = [
   {
-    id: '1',
-    name: 'Ana Luiza',
-    image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9',
-    rating: 4.8,
-    reviews: 42,
-    views: 1205,
-    price: { 
-      current: 350,
-      original: 450
-    },
-    tag: {
-      text: 'HOT',
-      type: 'hot' as const
-    }
+    id: '6',
+    name: 'Fernanda Lima',
+    image: 'https://images.unsplash.com/photo-1535268647677-300dbf3d78d1',
+    rating: 5.0,
+    reviews: 48,
+    views: 1870,
+    price: { current: 400 },
+    tag: { text: 'HOT', type: 'hot' as const },
   },
   {
-    id: '2',
-    name: 'Bruno Silva',
+    id: '5',
+    name: 'Eduardo Nunes',
     image: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901',
-    rating: 4.5,
-    reviews: 28,
-    views: 890,
-    price: { 
-      current: 300
-    },
-    tag: {
-      text: 'NEW',
-      type: 'new' as const
-    }
+    rating: 4.6,
+    reviews: 22,
+    views: 780,
+    price: { current: 290, original: 340 },
   },
   {
     id: '3',
@@ -49,33 +37,26 @@ const ads = [
     rating: 4.9,
     reviews: 56,
     views: 1580,
-    price: { 
-      current: 280, 
-      original: 350
-    },
-    tag: {
-      text: 'SALE',
-      type: 'sale' as const
-    }
+    price: { current: 280, original: 350 },
+    tag: { text: 'SALE', type: 'sale' as const }
   },
   {
-    id: '4',
-    name: 'Diana Costa',
+    id: '8',
+    name: 'Helena Soares',
     image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9',
-    rating: 4.7,
-    reviews: 34,
-    views: 950,
-    price: { 
-      current: 320
-    }
+    rating: 4.5,
+    reviews: 31,
+    views: 1450,
+    price: { current: 310, original: 380 },
+    tag: { text: 'SALE', type: 'sale' as const }
   }
 ];
 
-const FeaturedSection = () => {
+const PopularSection = () => {
   return (
     <section className="py-8 px-4 md:px-8 relative">
       <div className="container mx-auto">
-        <h2 className="featured-section-title text-white">Em Destaques</h2>
+        <h2 className="featured-section-title text-white">Mais Populares</h2>
         
         <div className="relative mt-8">
           <Carousel
@@ -86,7 +67,7 @@ const FeaturedSection = () => {
             className="w-full"
           >
             <CarouselContent>
-              {ads.map((ad) => (
+              {popularAds.map((ad) => (
                 <CarouselItem key={ad.id} className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
                   <div className="p-1">
                     <AdCard {...ad} />
@@ -103,4 +84,4 @@ const FeaturedSection = () => {
   );
 };
 
-export default FeaturedSection;
+export default PopularSection;
