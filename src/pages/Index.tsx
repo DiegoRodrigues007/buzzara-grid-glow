@@ -7,6 +7,7 @@ import AdGrid from '@/components/AdGrid';
 import Footer from '@/components/Footer';
 import PopularSection from '@/components/PopularSection';
 import MostViewedSection from '@/components/MostViewedSection';
+import AnnouncementSection from '@/components/AnnouncementSection';
 
 const Index = () => {
   return (
@@ -15,6 +16,7 @@ const Index = () => {
       <Navigation />
       <main className="flex-1">
         <FeaturedSection />
+        <AnnouncementSection />
         <PopularSection />
         <MostViewedSection />
         <AdGrid />
