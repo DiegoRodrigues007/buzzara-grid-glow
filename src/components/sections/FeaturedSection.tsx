@@ -18,7 +18,7 @@ const ads: IAd[] = [
   {
     id: '1',
     name: 'Ana Luiza',
-    image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9',
+    image: 'https://plus.unsplash.com/premium_photo-1676488643746-b7e4da5312c5?q=80&w=1949&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     rating: 4.8,
     reviews: 42,
     views: 1205,
@@ -35,7 +35,7 @@ const ads: IAd[] = [
   {
     id: '2',
     name: 'Bruno Silva',
-    image: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901',
+    image: '',
     rating: 4.5,
     reviews: 28,
     views: 890,
@@ -51,7 +51,7 @@ const ads: IAd[] = [
   {
     id: '3',
     name: 'Carla Mendes',
-    image: 'https://images.unsplash.com/photo-1535268647677-300dbf3d78d1',
+    image: '',
     rating: 4.9,
     reviews: 56,
     views: 1580,
@@ -68,7 +68,7 @@ const ads: IAd[] = [
   {
     id: '4',
     name: 'Diana Costa',
-    image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9',
+    image: '',
     rating: 4.7,
     reviews: 34,
     views: 950,
@@ -80,7 +80,7 @@ const ads: IAd[] = [
   {
     id: '9',
     name: 'Ricardo e Julia',
-    image: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901',
+    image: '',
     rating: 4.8,
     reviews: 27,
     views: 1120,

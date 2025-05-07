@@ -64,7 +64,7 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				buzzara: {
-					background: '#2E2E2E',
+					background: '#3d433f',
 					primary: '#9b87f5',
 					secondary: '#FFC107',
 					accent: '#EA384C',

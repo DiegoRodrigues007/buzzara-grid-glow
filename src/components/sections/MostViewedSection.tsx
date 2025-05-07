@@ -19,7 +19,7 @@ const mostViewedAds: IAd[] = [
   {
     id: '6',
     name: 'Fernanda Lima',
-    image: 'https://images.unsplash.com/photo-1535268647677-300dbf3d78d1',
+    image: 'https://plus.unsplash.com/premium_photo-1677197071637-092eeb20d8ee?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     rating: 5.0,
     reviews: 48,
     views: 1870,
@@ -30,7 +30,7 @@ const mostViewedAds: IAd[] = [
   {
     id: '3',
     name: 'Carla Mendes',
-    image: 'https://images.unsplash.com/photo-1535268647677-300dbf3d78d1',
+    image: 'https://plus.unsplash.com/premium_photo-1677197071637-092eeb20d8ee?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     rating: 4.9,
     reviews: 56,
     views: 1580,
@@ -41,7 +41,7 @@ const mostViewedAds: IAd[] = [
   {
     id: '8',
     name: 'Helena Soares',
-    image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9',
+    image: 'https://plus.unsplash.com/premium_photo-1677197071637-092eeb20d8ee?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     rating: 4.5,
     reviews: 31,
     views: 1450,
@@ -52,7 +52,7 @@ const mostViewedAds: IAd[] = [
   {
     id: '1',
     name: 'Ana Luiza',
-    image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9',
+    image: 'https://plus.unsplash.com/premium_photo-1677197071637-092eeb20d8ee?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     rating: 4.8,
     reviews: 42,
     views: 1205,
@@ -63,7 +63,7 @@ const mostViewedAds: IAd[] = [
   {
     id: '11',
     name: 'Pedro Silva',
-    image: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901',
+    image: 'https://plus.unsplash.com/premium_photo-1677197071637-092eeb20d8ee?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     rating: 4.7,
     reviews: 35,
     views: 1150,
@@ -73,7 +73,7 @@ const mostViewedAds: IAd[] = [
   {
     id: '12',
     name: 'Juliana e Marcos',
-    image: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901',
+    image: 'https://plus.unsplash.com/premium_photo-1677197071637-092eeb20d8ee?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     rating: 4.8,
     reviews: 38,
     views: 1190,

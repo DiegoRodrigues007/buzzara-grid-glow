@@ -12,7 +12,7 @@ const allAds: IAd[] = [
   {
     id: '1',
     name: 'Ana Luiza',
-    image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9',
+    image: '',
     rating: 4.8,
     reviews: 42,
     views: 1205,
@@ -23,7 +23,7 @@ const allAds: IAd[] = [
   {
     id: '2',
     name: 'Bruno Silva',
-    image: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901',
+    image: '',
     rating: 4.5,
     reviews: 28,
     views: 890,
@@ -34,7 +34,7 @@ const allAds: IAd[] = [
   {
     id: '3',
     name: 'Carla Mendes',
-    image: 'https://images.unsplash.com/photo-1535268647677-300dbf3d78d1',
+    image: '',
     rating: 4.9,
     reviews: 56,
     views: 1580,
@@ -45,7 +45,7 @@ const allAds: IAd[] = [
   {
     id: '4',
     name: 'Diana Costa',
-    image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9',
+    image: '',
     rating: 4.7,
     reviews: 34,
     views: 950,
@@ -55,7 +55,7 @@ const allAds: IAd[] = [
   {
     id: '5',
     name: 'Eduardo Nunes',
-    image: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901',
+    image: '',
     rating: 4.6,
     reviews: 22,
     views: 780,
@@ -65,7 +65,7 @@ const allAds: IAd[] = [
   {
     id: '6',
     name: 'Fernanda Lima',
-    image: 'https://images.unsplash.com/photo-1535268647677-300dbf3d78d1',
+    image: '',
     rating: 5.0,
     reviews: 48,
     views: 1870,
@@ -76,7 +76,7 @@ const allAds: IAd[] = [
   {
     id: '7',
     name: 'Gabriel Santos',
-    image: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901',
+    image: '',
     rating: 4.3,
     reviews: 19,
     views: 620,
@@ -86,7 +86,7 @@ const allAds: IAd[] = [
   {
     id: '8',
     name: 'Helena Soares',
-    image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9',
+    image: '',
     rating: 4.5,
     reviews: 31,
     views: 1450,
@@ -97,7 +97,7 @@ const allAds: IAd[] = [
   {
     id: '13',
     name: 'Rafael e Amanda',
-    image: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901',
+    image: '',
     rating: 4.6,
     reviews: 25,
     views: 950,

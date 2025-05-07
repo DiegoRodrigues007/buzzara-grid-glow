@@ -1,21 +1,23 @@
-
 import React, { useState } from 'react';
 import { Search, MapPin, User } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+// import your logo asset however you prefer:
+import LogoImg from '@/assets/images/logo.png';
 
 const Header = () => {
   const [location, setLocation] = useState('São Paulo');
 
   return (
-    <header className="w-full py-4 px-4 md:px-8 bg-buzzara-background border-b border-gray-800">
+    <header className="w-full py-4 px-4 md:px-8 bg-buzzara-background">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         {/* Logo */}
         <div className="flex items-center">
-          <h1 className="text-2xl md:text-3xl font-bold text-white">
-            <span className="text-buzzara-primary">BUZZ</span>
-            <span className="text-white">ARA</span>
-          </h1>
+          <img
+            src={LogoImg}
+            alt="Buzzara Logo"
+            className="h-8 md:h-10 object-contain"
+          />
         </div>
 
         {/* Search and Location selector */}
@@ -28,7 +30,10 @@ const Header = () => {
             />
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
           </div>
-          <div className="flex bg-gray-800 rounded-md px-3 items-center cursor-pointer border border-gray-700">
+          <div
+            className="flex bg-gray-800 rounded-md px-3 items-center cursor-pointer border border-gray-700"
+            onClick={() => { /* talvez abra um modal de localização */ }}
+          >
             <MapPin className="h-4 w-4 text-gray-400 mr-1" />
             <span className="text-sm text-gray-200">{location}</span>
           </div>
@@ -36,7 +41,10 @@ const Header = () => {
 
         {/* Login button */}
         <div>
-          <Button variant="outline" className="border-buzzara-primary text-buzzara-primary hover:bg-buzzara-primary hover:text-white">
+          <Button
+            variant="outline"
+            className="border-buzzara-primary text-buzzara-primary hover:bg-buzzara-primary hover:text-white"
+          >
             <User className="h-4 w-4 mr-2" />
             Entrar
           </Button>

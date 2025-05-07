@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { cn } from '@/lib/utils';
 
@@ -17,7 +16,9 @@ const Navigation: React.FC<NavigationProps> = ({ activeCategory, onCategoryChang
   ];
 
   return (
-    <nav className="w-full bg-gray-800 py-3 px-4 md:px-8 sticky top-0 z-20">
+    <nav
+      className="w-full py-3 px-4 md:px-8 sticky top-0 z-20 border-b border-[#3d433f] shadow-lg bg-buzzara-background"
+    >
       <div className="container mx-auto flex items-center overflow-x-auto">
         {categories.map((category) => (
           <a 
@@ -34,7 +35,11 @@ const Navigation: React.FC<NavigationProps> = ({ activeCategory, onCategoryChang
             onClick={(e) => {
               e.preventDefault();
               if (category.filter) {
-                onCategoryChange(activeCategory === category.filter ? null : category.filter);
+                onCategoryChange(
+                  activeCategory === category.filter
+                    ? null
+                    : category.filter
+                );
               }
             }}
           >
